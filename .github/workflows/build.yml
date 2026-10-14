@@ -1,0 +1,20 @@
+name: Build PDF
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install TeXLive & Noto CJK Font
+        run: |
+          sudo apt update
+          sudo apt install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra fonts-noto-cjk
+      - name: Compile with XeLaTeX
+        run: |
+          xelatex storage_scheme.tex
+          xelatex storage_scheme.tex
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-pdf
+          path: storage_scheme.pdf
