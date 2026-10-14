@@ -30,9 +30,8 @@ ems_sim_train/
 
 ## 安装与运行
 
-### 方式一：pip 直接安装（推荐，发布到 GitHub 后）
+### 方式一：pip 直接安装
 
-把这个包发布到你 GitHub 仓库后，**任何装有 Python 的人**只需一条命令即可安装使用：
 
 ```bash
 # 直接从你的 GitHub 仓库安装（自动装好 numpy/matplotlib）
