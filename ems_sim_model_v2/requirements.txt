@@ -1,4 +1,0 @@
-# 南昌零碳园区储能仿真数学模型 · Python 依赖清单
-# Windows 上运行/打包前先执行:  pip install -r requirements.txt
-numpy>=1.24
-matplotlib>=3.7
