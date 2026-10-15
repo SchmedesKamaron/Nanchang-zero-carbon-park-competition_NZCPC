@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="773" height="1170" viewBox="0 0 773 1170" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Noto Sans SC','Helvetica Neue',Arial,sans-serif">
+<defs><marker id="ar" viewBox="0 0 12 12" refX="7.2" refY="6" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M 0 0 L 12 6 L 0 12 Z" fill="#6B7280"/></marker></defs>
+<rect width="773" height="1170" fill="#FFFFFF"/>
+<text x="386" y="44" font-size="30" font-weight="700" font-family="'方正小标宋简体','思源宋体','Source Han Serif SC','Noto Serif CJK SC','华文中宋',serif" fill="#1F2933" stroke="#1F2933" stroke-width="0.3" text-anchor="middle">源网荷储三级协同调度体系原理图</text>
+<g data-role="edges">
+<path d="M 386.3,188.0 L 386.3,259.7" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M 386.3,315.3 L 386.3,387.0" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M 386.3,464.4 L 386.3,1094.9" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#ar)"/>
+<text x="394.3" y="783.7" font-size="13" font-weight="600" fill="#6B7280" text-anchor="start">储能充放电基线</text>
+<path d="M 519.6,1126.4 L 752.0,1126.4 Q 754.5,1126.4 754.5,1123.9 L 754.5,581.1 Q 754.5,578.6 752.0,578.6 L 574.3,578.6" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M 386.3,613.6 L 386.3,685.3" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#ar)"/>
+<text x="394.3" y="653.5" font-size="13" font-weight="600" fill="#6B7280" text-anchor="start">滚动修正</text>
+<path d="M 386.3,740.8 L 386.3,812.5" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M 386.3,890.0 L 386.3,961.7" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#ar)"/>
+<text x="394.3" y="929.9" font-size="13" font-weight="600" fill="#6B7280" text-anchor="start">功率指令</text>
+<path d="M 386.3,1023.2 L 386.3,1094.9" fill="none" stroke="#6B7280" stroke-width="2" marker-end="url(#ar)"/>
+<text x="394.3" y="1063.1" font-size="13" font-weight="600" fill="#6B7280" text-anchor="start">秒级量测反馈</text>
+</g>
+<g data-role="nodes">
+<g data-role="node" data-id="input">
+<rect x="196.4" y="112.0" width="379.7" height="76.0" rx="38.0" fill="#374151" stroke="#374151" stroke-width="1"/>
+<text x="386.3" y="145.0" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">光伏出力预测 · 负荷预测 · 电价信号 · </text>
+<text x="386.3" y="167.0" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">电网调度计划</text>
+</g>
+<g data-role="node" data-id="da">
+<rect x="279.5" y="267.2" width="213.6" height="48.0" rx="12" fill="#991B1B"/>
+<text x="386.3" y="297.2" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">日前调度层（24h尺度）</text>
+</g>
+<g data-role="node" data-id="da_note">
+<rect x="203.0" y="394.5" width="366.6" height="70.0" rx="12" fill="#E9ECEF"/>
+<text x="386.3" y="424.4" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">多目标优化算法生成储能充放电基线 · 调度</text>
+<text x="386.3" y="446.4" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">时间步长1h</text>
+</g>
+<g data-role="node" data-id="idp_note">
+<rect x="205.7" y="543.6" width="361.2" height="70.0" rx="12" fill="#E9ECEF"/>
+<text x="386.3" y="573.6" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">模型预测控制（MPC）滚动更新 · 校正日前</text>
+<text x="386.3" y="595.6" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">计划偏差</text>
+</g>
+<g data-role="node" data-id="rt">
+<rect x="276.7" y="692.8" width="219.0" height="48.0" rx="12" fill="#E9ECEF"/>
+<text x="386.3" y="722.8" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">实时控制层（秒级尺度）</text>
+</g>
+<g data-role="node" data-id="rt_note">
+<rect x="206.7" y="820.0" width="359.1" height="70.0" rx="12" fill="#E9ECEF"/>
+<text x="386.3" y="850.0" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">毫秒级闭环控制 · 快速响应频率扰动/电压</text>
+<text x="386.3" y="872.0" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">偏移/负荷突变</text>
+</g>
+<g data-role="node" data-id="exec">
+<rect x="216.5" y="969.2" width="339.6" height="54.0" rx="27.0" fill="#374151" stroke="#374151" stroke-width="1"/>
+<text x="386.3" y="1002.2" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">储能充放电功率执行 · 柔性负荷调度</text>
+</g>
+<g data-role="node" data-id="idp">
+<rect x="252.9" y="1102.4" width="266.6" height="48.0" rx="12" fill="#E9ECEF"/>
+<text x="386.3" y="1132.4" font-size="17" font-weight="700" fill="#1F2933" text-anchor="middle">日内滚动调度层（15min尺度）</text>
+</g>
+</g></svg>

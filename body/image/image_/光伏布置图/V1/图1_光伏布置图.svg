@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1768" height="831" viewBox="0 0 1768 831" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Noto Sans SC','Helvetica Neue',Arial,sans-serif">
+<defs><marker id="ag" viewBox="0 0 12 12" refX="7.2" refY="6" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M 0 0 L 12 6 L 0 12 Z" fill="#4B5563"/></marker><marker id="ar" viewBox="0 0 12 12" refX="6.857" refY="6" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M 0 0 L 12 6 L 0 12 Z" fill="#991B1B"/></marker></defs>
+<rect width="1768" height="831" fill="#FFFFFF"/>
+<text x="884" y="46" font-size="30" font-weight="700" font-family="'方正小标宋简体','思源宋体','Source Han Serif SC','Noto Serif CJK SC','华文中宋',serif" fill="#1F2933" stroke="#1F2933" stroke-width="0.3" text-anchor="middle">园区分布式光伏布置与接入结构图</text>
+<g data-role="edges">
+<path d="M 1231.6,357.9 L 1027.5,357.9" fill="none" stroke="#4B5563" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M 899.6,179.4 L 899.6,251.9 Q 899.6,254.4 899.6,256.9 L 899.6,321.9" fill="none" stroke="#4B5563" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M 899.6,386.4 L 899.6,458.9 Q 899.6,461.4 899.6,463.9 L 899.6,528.9" fill="none" stroke="#4B5563" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M 779.2,357.9 L 605.9,357.9" fill="none" stroke="#4B5563" stroke-width="2" marker-end="url(#ag)"/>
+<path d="M 1020.0,357.9 L 1146.0,357.9 Q 1148.5,357.9 1148.5,355.4 L 1148.5,153.4 Q 1148.5,150.9 1151.0,150.9 L 1269.5,150.9" fill="none" stroke="#4B5563" stroke-width="2" marker-end="url(#ag)"/>
+</g>
+<g data-role="nodes">
+<g data-role="node" data-id="pv_total" data-emph="1">
+<rect x="779.2" y="329.4" width="240.8" height="57.0" rx="12" fill="#E9ECEF" stroke="#D6DAE0" stroke-width="1"/>
+<text x="899.6" y="364.5" font-size="19" font-weight="700" fill="#1F2933" text-anchor="middle">园区分布式光伏 4.8MW</text>
+</g>
+<g data-role="node" data-id="pv_roof">
+<rect x="1231.6" y="329.4" width="240.8" height="57.0" rx="12" fill="#E9ECEF" stroke="#D6DAE0" stroke-width="1"/>
+<text x="1352.0" y="364.5" font-size="19" font-weight="700" fill="#1F2933" text-anchor="middle">屋顶分布式光伏 4.2MW</text>
+</g>
+<g data-role="node" data-id="pv_canopy">
+<rect x="807.7" y="122.4" width="183.8" height="57.0" rx="12" fill="#E9ECEF" stroke="#D6DAE0" stroke-width="1"/>
+<text x="899.6" y="157.6" font-size="19" font-weight="700" fill="#1F2933" text-anchor="middle">光伏车棚 0.6MW</text>
+</g>
+<g data-role="node" data-id="ess">
+<rect x="296.0" y="329.4" width="302.4" height="57.0" rx="12" fill="#E9ECEF" stroke="#D6DAE0" stroke-width="1"/>
+<text x="447.2" y="364.5" font-size="19" font-weight="700" fill="#1F2933" text-anchor="middle">储能系统 4MW/8MWh 磷酸铁锂</text>
+</g>
+<g data-role="node" data-id="load">
+<rect x="820.6" y="536.4" width="158.0" height="57.0" rx="12" fill="#E9ECEF" stroke="#D6DAE0" stroke-width="1"/>
+<text x="899.6" y="571.5" font-size="19" font-weight="700" fill="#1F2933" text-anchor="middle">园区生产负荷</text>
+</g>
+<g data-role="node" data-id="grid">
+<rect x="1277.0" y="122.4" width="150.0" height="57.0" rx="12" fill="#E9ECEF" stroke="#D6DAE0" stroke-width="1"/>
+<text x="1352.0" y="157.6" font-size="19" font-weight="700" fill="#1F2933" text-anchor="middle">配电网</text>
+</g>
+</g>
+<g data-role="edge-labels">
+<text x="1125.8" y="339.9" font-size="13" font-weight="600" fill="#6B7280" text-anchor="middle">4.2MW</text>
+<text x="850.2" y="250.9" font-size="13" font-weight="600" fill="#6B7280" text-anchor="start">0.6MW</text>
+<text x="785.2" y="472.9" font-size="13" font-weight="600" fill="#6B7280" text-anchor="start">自发自用率94.9%</text>
+<text x="688.8" y="339.9" font-size="13" font-weight="600" fill="#6B7280" text-anchor="middle">大发时段吸纳富余光伏电力</text>
+<text x="1161.5" y="248.0" font-size="13" font-weight="600" fill="#6B7280" text-anchor="start">抑制功率反向倒送</text>
+</g>
+</svg>
