@@ -54,7 +54,7 @@
 <body>
 <div class="wrap">
   <h1>⚡ 南昌零碳园区储能仿真</h1>
-  <div class="sub">填写参数 → 生成配置 → 交给小艺运行仿真并给出分析</div>
+  <div class="sub">填写参数 → 生成配置 → 交给AI运行仿真并给出分析</div> 
 
   <div class="card">
     <h2>① 运行场景（可多选）</h2>
@@ -117,7 +117,7 @@
   </div>
 
   <textarea id="out" placeholder="点击『生成配置』后会在这里显示参数 JSON…"></textarea>
-  <div class="tip">把上面生成的配置发给小艺，小艺会运行仿真并给出该组数据下的结果分析。</div>
+  <div class="tip">把上面生成的配置发给AI，AI会运行仿真并给出该组数据下的结果分析。</div>
 </div>
 
 <script>
@@ -169,7 +169,7 @@ function exportJson(){
   try {
     if (navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(JSON.stringify(p));
-      document.querySelector('.tip').textContent = '✅ 已生成并复制配置，粘贴发给小艺即可。';
+      document.querySelector('.tip').textContent = '✅ 已生成并复制配置，粘贴发给AI即可。作者：电化 2501 熊梓亦 Kschmedes@hawkmail.hccfl.edu';
     }
   } catch(e){}
 }
