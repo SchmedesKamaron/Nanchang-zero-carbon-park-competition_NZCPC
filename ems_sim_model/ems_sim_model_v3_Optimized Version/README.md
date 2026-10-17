@@ -1,4 +1,4 @@
-# 南昌零碳园区储能系统仿真数学模型（NZCPC_opt）
+# 南昌零碳园区储能系统仿真数学模型_ems_sim_model_v3_Optimized Version
 
 基于《储能系统运行策略优化与源网荷储协同深化方案》构建的可运行仿真数学模型。
 本目录对应仓库中的 `ems_sim_model/ems_sim_model_v3/NZCPC_opt/`（v3 优化版）。
