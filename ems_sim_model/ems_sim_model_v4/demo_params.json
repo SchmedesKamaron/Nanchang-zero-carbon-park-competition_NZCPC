@@ -1,0 +1,21 @@
+{
+  "work_days": 250,
+  "scenes": ["economic", "pv_absorb", "demand_response", "blackout"],
+  "storage_cap_mwh": 8.0,
+  "storage_power_mw": 4.0,
+  "soc_min": 0.20,
+  "soc_max": 0.90,
+  "eta_charge": 0.95,
+  "eta_discharge": 0.95,
+  "max_cycles_day": 2.0,
+  "pv_roof_mw": 4.2,
+  "pv_canopy_mw": 0.6,
+  "load_peak_mw": 6.0,
+  "price_valley": 0.35,
+  "price_flat": 0.70,
+  "price_peak": 1.10,
+  "subsidy_cut": 3.0,
+  "subsidy_fill": 1.5,
+  "subsidy_peakshift": 0.65,
+  "restarts": 3
+}
