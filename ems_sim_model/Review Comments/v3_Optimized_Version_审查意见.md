@@ -872,19 +872,16 @@ co2\_kg = (
 
 建议把经济收益统一定义为：
 
-$B_{\text{storage}} = C_{\text{grid,baseline}} - C_{\text{grid,actual}} - C_{\text{O\&M}} + R_{\text{valid subsidy}}$
+$$
+B_{\text{storage}} = C_{\text{grid,baseline}} - C_{\text{grid,actual}} - C_{\text{O\\&M}} + R_{\text{valid subsidy}}
+$$
 
 其中：
 
-
-
-* $C_{\text{grid,baseline}}$：不使用储能时的购电成本；
-
-* $C_{\text{grid,actual}}$：采用当前策略后的实际购电成本；
-
-* $C_{\text{O\&M}}$：储能运维成本；
-
-* $R_{\text{valid subsidy}}$：符合场景和规则的实际需求响应补贴。
+- $C_{\text{grid,baseline}}$：不使用储能时的购电成本；
+- $C_{\text{grid,actual}}$：采用当前策略后的实际购电成本；
+- $C_{\text{O\\&M}}$：储能运维成本；
+- $R_{\text{valid subsidy}}$：符合场景和规则的实际需求响应补贴。
 
 代码结构可以改为：
 
