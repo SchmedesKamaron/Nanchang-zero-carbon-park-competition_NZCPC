@@ -1,9 +1,0 @@
-[project]
-name = "nzcp-ems-sim"
-version = "1.0-fixed"
-description = "南昌零碳园区储能系统仿真数学模型(按审查意见修复版)"
-requires-python = ">=3.8"
-dependencies = ["numpy>=1.21", "pytest>=7.0"]
-
-[project.scripts]
-nzcp-run = "run_simulation:main"
