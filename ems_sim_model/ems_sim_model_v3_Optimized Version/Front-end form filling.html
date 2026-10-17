@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南昌零碳园区储能仿真 · 参数填写</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f0f4f8; color: #1f2d3d; padding: 16px; line-height: 1.5;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .sub { color: #5c6b7d; font-size: 13px; margin-bottom: 16px; }
+  .card {
+    background: #fff; border-radius: 12px; padding: 16px;
+    margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  .card h2 {
+    font-size: 15px; margin-bottom: 12px; color: #155eef;
+    border-left: 4px solid #155eef; padding-left: 8px;
+  }
+  .row { display: flex; align-items: center; justify-content: space-between;
+         padding: 6px 0; border-bottom: 1px dashed #eef1f5; }
+  .row:last-child { border-bottom: none; }
+  .lbl { font-size: 13px; color: #33475b; }
+  .lbl small { color: #8a99a8; }
+  input[type=number], input[type=text] {
+    width: 110px; padding: 5px 8px; border: 1px solid #cdd7e1;
+    border-radius: 6px; text-align: right; font-size: 13px;
+  }
+  .chk { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chk label {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #f3f6fa; border: 1px solid #dbe3ec; border-radius: 16px;
+    padding: 5px 12px; font-size: 13px; cursor: pointer;
+  }
+  .btns { display: flex; gap: 10px; position: sticky; bottom: 8px;
+          background: rgba(255,255,255,.95); padding: 10px; border-radius: 10px;
+          backdrop-filter: blur(4px); box-shadow: 0 2px 8px rgba(0,0,0,.12); }
+  button {
+    flex: 1; padding: 11px; border: none; border-radius: 8px; font-size: 15px;
+    cursor: pointer; font-weight: 600;
+  }
+  .btn-run { background: #155eef; color: #fff; }
+  .btn-reset { background: #e2e8f0; color: #33475b; }
+  textarea { width: 100%; height: 110px; margin-top: 10px; font-size: 11px;
+             border: 1px solid #cdd7e1; border-radius: 8px; padding: 8px;
+             font-family: monospace; }
+  .tip { font-size: 12px; color: #5c6b7d; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>⚡ 南昌零碳园区储能仿真</h1>
+  <div class="sub">填写参数 → 生成配置 → 交给AI运行仿真并给出分析</div> 
+
+  <div class="card">
+    <h2>① 运行场景（可多选）</h2>
+    <div class="chk">
+      <label><input type="checkbox" class="scene" value="economic" checked> 日常经济</label>
+      <label><input type="checkbox" class="scene" value="pv_absorb" checked> 光伏消纳</label>
+      <label><input type="checkbox" class="scene" value="demand_response" checked> 需求响应</label>
+      <label><input type="checkbox" class="scene" value="blackout" checked> 应急备用</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>② 储能系统</h2>
+    <div class="row"><span class="lbl">额定容量 <small>(MWh)</small></span><input type="number" id="storage_cap_mwh" value="8" step="0.5"></div>
+    <div class="row"><span class="lbl">额定功率 <small>(MW)</small></span><input type="number" id="storage_power_mw" value="4" step="0.5"></div>
+    <div class="row"><span class="lbl">SOC 下限 <small>(%)</small></span><input type="number" id="soc_min" value="20"></div>
+    <div class="row"><span class="lbl">SOC 上限 <small>(%)</small></span><input type="number" id="soc_max" value="90"></div>
+    <div class="row"><span class="lbl">充电效率 <small>(%)</small></span><input type="number" id="eta_charge" value="95"></div>
+    <div class="row"><span class="lbl">放电效率 <small>(%)</small></span><input type="number" id="eta_discharge" value="95"></div>
+    <div class="row"><span class="lbl">日循环次数上限</span><input type="number" id="max_cycles_day" value="2" step="0.5"></div>
+  </div>
+
+  <div class="card">
+    <h2>③ 光伏装机</h2>
+    <div class="row"><span class="lbl">屋顶光伏 <small>(MW)</small></span><input type="number" id="pv_roof_mw" value="4.2" step="0.1"></div>
+    <div class="row"><span class="lbl">车棚光伏 <small>(MW)</small></span><input type="number" id="pv_canopy_mw" value="0.6" step="0.1"></div>
+  </div>
+
+  <div class="card">
+    <h2>④ 负荷</h2>
+    <div class="row"><span class="lbl">负荷峰值 <small>(MW)</small></span><input type="number" id="load_peak_mw" value="6.0" step="0.5"></div>
+  </div>
+
+  <div class="card">
+    <h2>⑤ 分时电价 <small>(元/kWh)</small></h2>
+    <div class="row"><span class="lbl">谷段电价</span><input type="number" id="price_valley" value="0.35" step="0.01"></div>
+    <div class="row"><span class="lbl">平段电价</span><input type="number" id="price_flat" value="0.70" step="0.01"></div>
+    <div class="row"><span class="lbl">峰段电价</span><input type="number" id="price_peak" value="1.10" step="0.01"></div>
+  </div>
+
+  <div class="card">
+    <h2>⑥ 需求响应补贴 <small>(元/kWh)</small></h2>
+    <div class="row"><span class="lbl">削峰补贴</span><input type="number" id="subsidy_cut" value="3.0" step="0.1"></div>
+    <div class="row"><span class="lbl">填谷补贴</span><input type="number" id="subsidy_fill" value="1.5" step="0.1"></div>
+    <div class="row"><span class="lbl">调峰补偿</span><input type="number" id="subsidy_peakshift" value="0.65" step="0.05"></div>
+  </div>
+
+  <div class="card">
+    <h2>⑦ 权重与其他</h2>
+    <div class="row"><span class="lbl">经济权重 α/β/γ</span><input type="text" id="w_econ" value="0.6,0.25,0.15" placeholder="α,β,γ"></div>
+    <div class="row"><span class="lbl">消纳权重 α/β/γ</span><input type="text" id="w_pv" value="0.2,0.65,0.15"></div>
+    <div class="row"><span class="lbl">需求响应权重 α/β/γ</span><input type="text" id="w_dr" value="0.3,0.15,0.55"></div>
+    <div class="row"><span class="lbl">碳排放因子 <small>(kgCO2/kWh)</small></span><input type="number" id="emission" value="0.581" step="0.001"></div>
+    <div class="row"><span class="lbl">年生产天数</span><input type="number" id="work_days" value="250"></div>
+  </div>
+
+  <div class="btns">
+    <button class="btn-reset" onclick="resetForm()">重置默认</button>
+    <button class="btn-run" onclick="exportJson()">生成配置</button>
+  </div>
+
+  <textarea id="out" placeholder="点击『生成配置』后会在这里显示参数 JSON…"></textarea>
+  <div class="tip">把上面生成的配置发给AI，AI会运行仿真并给出该组数据下的结果分析。</div>
+</div>
+
+<script>
+const DEFAULTS = {
+  storage_cap_mwh: 8, storage_power_mw: 4, soc_min: 20, soc_max: 90,
+  eta_charge: 95, eta_discharge: 95, max_cycles_day: 2,
+  pv_roof_mw: 4.2, pv_canopy_mw: 0.6, load_peak_mw: 6.0,
+  price_valley: 0.35, price_flat: 0.70, price_peak: 1.10,
+  subsidy_cut: 3.0, subsidy_fill: 1.5, subsidy_peakshift: 0.65,
+  w_econ: "0.6,0.25,0.15", w_pv: "0.2,0.65,0.15", w_dr: "0.3,0.15,0.55",
+  emission: 0.581, work_days: 250
+};
+function resetForm(){
+  for (const [k, v] of Object.entries(DEFAULTS)){
+    const el = document.getElementById(k);
+    if (el) el.value = v;
+  }
+  document.querySelectorAll('.scene').forEach(c=>c.checked=true);
+  document.getElementById('out').value='';
+}
+function parseW(s){ const a=s.split(',').map(Number); return {alpha:a[0],beta:a[1],gamma:a[2]}; }
+function exportJson(){
+  const num = id => parseFloat(document.getElementById(id).value);
+  const p = {
+    scenes: Array.from(document.querySelectorAll('.scene:checked')).map(c=>c.value),
+    storage_cap_mwh: num('storage_cap_mwh'),
+    storage_power_mw: num('storage_power_mw'),
+    soc_min: num('soc_min')/100,
+    soc_max: num('soc_max')/100,
+    eta_charge: num('eta_charge')/100,
+    eta_discharge: num('eta_discharge')/100,
+    max_cycles_day: num('max_cycles_day'),
+    pv_roof_mw: num('pv_roof_mw'),
+    pv_canopy_mw: num('pv_canopy_mw'),
+    load_peak_mw: num('load_peak_mw'),
+    price_valley: num('price_valley'),
+    price_flat: num('price_flat'),
+    price_peak: num('price_peak'),
+    subsidy_cut: num('subsidy_cut'),
+    subsidy_fill: num('subsidy_fill'),
+    subsidy_peakshift: num('subsidy_peakshift'),
+    w_econ: parseW(document.getElementById('w_econ').value),
+    w_pv: parseW(document.getElementById('w_pv').value),
+    w_dr: parseW(document.getElementById('w_dr').value),
+    emission: num('emission'),
+    work_days: num('work_days')
+  };
+  document.getElementById('out').value = JSON.stringify(p, null, 2);
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(JSON.stringify(p));
+      document.querySelector('.tip').textContent = '✅ 已生成并复制配置，粘贴发给AI即可。作者：电化 2501 熊梓亦 Kschmedes@hawkmail.hccfl.edu';
+    }
+  } catch(e){}
+}
+</script>
+</body>
+</html>
